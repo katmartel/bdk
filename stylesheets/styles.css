@@ -2,8 +2,7 @@
 body {
   margin: 0;
   font-family: 'Lora', serif;
-  /* background: linear-gradient(to right, #fceeea 0%, #f3ddbb 100%); */
-  background: linear-gradient(to bottom, #fceeea 0%, #f3ddbb 100%);
+  background: linear-gradient(to bottom right, #f9f6f0, #e9e4db);
   color: #4a2c2a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -581,12 +580,65 @@ nav ul li a:hover::after {
   opacity: 0.75;
   font-style: italic;
   letter-spacing: 0.3px;
+  padding-top: 1.5rem;
 }
 
 .faq-section {
   background: #f9f6f0;
-  padding: 4rem 2rem;
+  position: relative;
+  padding: clamp(2rem, 4vw, 4rem) clamp(1rem, 3vw, 2rem);
+  padding-top: clamp(3rem, 6vw, 5rem);
   font-family: 'Montserrat', sans-serif;
+}
+
+.faq-svg-defs{
+  position: absolute;
+  width: 0; 
+  height: 0;
+  overflow: hidden;
+}
+
+/* Ensure content sits above the decorations */
+.faq-inner{ 
+  position: 
+  relative; z-index: 1; }
+
+/* Corner SVGs */
+.faq-corner{
+  position: absolute;
+  width: 160px; height: 160px;
+  opacity: .5;
+  pointer-events: none;
+  z-index: 0;
+}
+.faq-corner.tl{ 
+  top: -3px; 
+  left: -3px;
+ }
+
+.faq-corner.br{
+  bottom: -6px; right: -6px;
+  transform: rotate(180deg);         /* mirror the corner for bottom-right */
+  transform-origin: center;
+}
+
+/* Slim line accents */
+.faq-lines{
+  position: absolute;
+  width: 80px; height: 26px;
+  opacity: .3;
+  pointer-events: none;
+  z-index: 0;
+}
+.faq-lines.tl{ 
+  top: 72px; 
+  left: 88px;
+ }
+ 
+.faq-lines.br{
+  bottom: 72px; right: 88px;
+  transform: rotate(180deg);
+  transform-origin: center;
 }
 
 .faq-content {
@@ -811,6 +863,21 @@ nav ul li a:hover::after {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  .faq-corner{ 
+    width: 100px; 
+    height: 100px; 
+    opacity:.45; }
+  .faq-lines{ 
+    display:none;
+   }       
+  .faq-corner.tl{ 
+    top: -4px; 
+    left: -4px; 
+  }
+  .faq-corner.br{ 
+    bottom: -4px; right: -4px; 
   }
 }
 

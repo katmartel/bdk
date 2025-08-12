@@ -153,13 +153,60 @@
       <div class="photo-frame">
         <div class="photo-background"></div>
         <div class="polaroid-card">
-          <img src="images/time.png" alt="Picture of competitors from BDK" />
+          <img src="images/schedule-img.jpg" alt="Picture of competitors from BDK" />
           <p class="photo-caption">The BDK Competitive Crew</p>
         </div>
       </div>
     </div>
   </section>  
   <section class="faq-section" id="faq">
+    <!-- Embellishments -->
+  <svg class="faq-svg-defs" aria-hidden="true">
+    <defs>
+      <!-- Gold gradient -->
+      <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%"  stop-color="#FFD700"/>
+        <stop offset="50%" stop-color="#FFA500"/>
+        <stop offset="100%" stop-color="#B8860B"/>
+      </linearGradient>
+
+      <!-- Corner embellishment (all strokes/fills use the gradient) -->
+      <symbol id="faq-corner" viewBox="0 0 150 150">
+        <!-- main corner lines -->
+        <line x1="0" y1="50" x2="50" y2="0" stroke="url(#goldGradient)" stroke-width="3"/>
+        <line x1="0" y1="70" x2="70" y2="0" stroke="url(#goldGradient)" stroke-width="2"/>
+        <line x1="0" y1="90" x2="90" y2="0" stroke="url(#goldGradient)" stroke-width="1"/>
+        <!-- stepped squares -->
+        <rect x="10" y="10" width="8" height="8" fill="url(#goldGradient)" opacity="0.8"/>
+        <rect x="25" y="10" width="6" height="6" fill="url(#goldGradient)" opacity="0.6"/>
+        <rect x="10" y="25" width="6" height="6" fill="url(#goldGradient)" opacity="0.6"/>
+        <rect x="37" y="10" width="4" height="4" fill="url(#goldGradient)" opacity="0.4"/>
+        <rect x="10" y="37" width="4" height="4" fill="url(#goldGradient)" opacity="0.4"/>
+        <!-- little linear accents -->
+        <line x1="20" y1="20" x2="35" y2="20" stroke="url(#goldGradient)" stroke-width="1" opacity="0.7"/>
+        <line x1="20" y1="20" x2="20" y2="35" stroke="url(#goldGradient)" stroke-width="1" opacity="0.7"/>
+        <line x1="45" y1="15" x2="55" y2="15" stroke="url(#goldGradient)" stroke-width="1" opacity="0.5"/>
+        <line x1="15" y1="45" x2="15" y2="55" stroke="url(#goldGradient)" stroke-width="1" opacity="0.5"/>
+      </symbol>
+
+      <!-- Slim line accent -->
+      <symbol id="faq-lines" viewBox="0 0 60 20">
+        <line x1="0" y1="10" x2="60" y2="10" stroke="url(#goldGradient)" stroke-width="2"/>
+        <line x1="10" y1="5"  x2="10" y2="15" stroke="url(#goldGradient)" stroke-width="1"/>
+        <line x1="30" y1="3"  x2="30" y2="17" stroke="url(#goldGradient)" stroke-width="1"/>
+        <line x1="50" y1="5"  x2="50" y2="15" stroke="url(#goldGradient)" stroke-width="1"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Decorations -->
+  <svg class="faq-corner tl" role="img" aria-hidden="true"><use href="#faq-corner"/></svg>
+  <svg class="faq-corner br" role="img" aria-hidden="true"><use href="#faq-corner"/></svg>
+
+  <!-- additional slim line accents -->
+  <svg class="faq-lines tl" role="img" aria-hidden="true"><use href="#faq-lines"/></svg>
+  <svg class="faq-lines br" role="img" aria-hidden="true"><use href="#faq-lines"/></svg>
+
     <div class="faq-content">
       <h2 class="faq-heading">Frequently Asked Questions</h2>
   
