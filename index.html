@@ -35,7 +35,7 @@
       "description": "Monthly social ballroom and Latin dance events with beginner lessons in Kelowna.",
       "image": "https://ballroomdanceclubofkelowna.com/images/logo_transparent_bg.png"
     }
-    </script>    
+    </script> 
 </head>
 <body>
   <nav>
@@ -136,13 +136,7 @@
       <div class="dates-text">
         <h2 class="section-heading">Upcoming Dates</h2>
         <p class="year-subheading">2025</p>
-        <ul class="date-list">
-          <li>🗓️ Sep 5th</li>
-          <li>🗓️ Oct 3rd</li>
-          <li>🗓️ Oct 17th</li>
-          <li>🗓️ Oct 31st </li>
-          <li>🗓️ Nov 28th</li>
-          <li>📅 More Dates TBD</li>
+        <ul class ="date-list" id="date-list">
         </ul>
         <p class="closing-text">CAN’T WAIT TO MEET YOU ON THE DANCE FLOOR!</p>
       </div>
@@ -254,6 +248,57 @@
       <p>&copy; 2025 BDK • Made with 💃 in Kelowna</p>
     </div>
   </footer>
-  
 </body>
+<script>
+    const upcomingDates = ["Sep 5th", "Oct 3rd", "Oct 17th", "Oct 31st", "Nov 28th"];
+  
+    /**
+     * Converts a string like "Oct 17th" into month index (0-11) and day number.
+     */
+    function getMonthAndDay(dateStr) {
+        // Remove ordinal suffixes (st, nd, rd, th) for reliable parsing.
+        const cleanStr = dateStr.replace(/(\d+)(st|nd|rd|th)/, '$1');
+        const tempDate = new Date(cleanStr + ', 2000'); 
+        
+        return {
+            monthIndex: tempDate.getMonth(),
+            day: tempDate.getDate()
+        };
+    }
+    
+    const today = new Date();
+    // Normalize today's date to midnight local time for accurate date-only comparison.
+    const todayNormalized = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    
+    const currentYear = today.getFullYear();
+    const dateList = document.getElementById('date-list');
+
+    upcomingDates.forEach(upcomingDateString => {
+        
+        const dateParts = getMonthAndDay(upcomingDateString);
+        
+        // Create the event date for the current year (e.g., Oct 17, 2025).
+        const eventDate = new Date(currentYear, dateParts.monthIndex, dateParts.day);
+
+        // If the date for the current year has already passed, skip it (do not display).
+        if (eventDate < todayNormalized) {
+             return; 
+        }
+        
+        // Display if the date is today or in the future.
+        if (eventDate >= todayNormalized) {
+            const listItem = document.createElement('li');
+            
+            // Format the date for friendly display (e.g., October 17, 2025).
+            const displayDate = eventDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+           listItem.textContent = '🗓️ ' + displayDate;
+            dateList.appendChild(listItem);
+        }
+    });
+</script>
 </html>
