@@ -301,8 +301,6 @@
       z-index: 5;
     }
 
-    /* Badge removed */
-
     /* Sparkle stars */
     .accent-star {
       position: absolute;
@@ -360,6 +358,111 @@
       opacity: .5;
       border-radius: 50%;
     }
+
+/* ─── Spring into Ballroom Callout ─────────────────── */
+.special-event {
+  background: linear-gradient(135deg, #1e2171 0%, #161a5a 100%);
+  padding: 5rem 2rem;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.special-event::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(189,207,214,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.special-event-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.special-event-eyebrow {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #bdcfd6;
+  margin-bottom: 0.8rem;
+}
+
+.special-event h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 400;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+.special-event-date {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #bdcfd6;
+  margin-bottom: 2rem;
+}
+
+.special-event-description {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  opacity: 0.88;
+  margin-bottom: 2rem;
+}
+
+.special-event-description strong {
+  color: #bdcfd6;
+  font-style: italic;
+}
+
+.special-event-poster-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2.2rem;
+  border: 1.5px solid rgba(189,207,214,.5);
+  border-radius: 40px;
+  color: #bdcfd6;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+.special-event-poster-btn:hover {
+  background: rgba(189,207,214,.15);
+  border-color: #bdcfd6;
+  color: white;
+}
+
+
+.date-list li.special .special-tag {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: #1e2171;
+  color: white;
+  border-radius: 20px;
+  padding: 0.2rem 0.65rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  display: inline-block;
+}
 
     /* ─── About / Event Info Section ─────────────────── */
     .about-section {

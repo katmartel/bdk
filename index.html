@@ -94,6 +94,23 @@
     <span>Community</span>
   </div>
 
+  <!-- ─── Spring into Ballroom ─────────────────────── -->
+<section class="special-event">
+  <div class="special-event-inner">
+    <p class="special-event-eyebrow">✦ Special Event ✦</p>
+    <h3>Spring into Ballroom</h3>
+    <p class="special-event-date">Saturday, March 28th, 2026</p>
+    <p class="special-event-description">
+      Beginner to Advanced Lessons<br/>
+      Saturday Night Social with Local Performances and Showcases<br/>
+      <strong>Special Guest Instructor:</strong> WDSF World Championship Bronze Medalist, Tony Chong of T&G Dancesport
+    </p>
+<a href="images/TG Weekend 2026.pdf" target="_blank" class="special-event-poster-btn">
+  <i class="fa-regular fa-file-pdf"></i> View Poster
+</a>
+  </div>
+</section>
+
   <!-- ─── About / Event Info ─────────────────────── -->
   <section id="about" class="about-section">
     <div class="about-inner">
@@ -313,7 +330,7 @@
     });
 
     /* ── Date list ── */
-    const upcomingDates = ["Jan 9th","Feb 6th","March 6th","April 10th","May 1st","May 29th","June 26th","July 24th","Aug 21st","Sep 18th","Oct 16th","Nov 13th","Dec 11th"];
+const upcomingDates = ["Jan 9th", "Feb 6th", "March 6th", "March 28th", "April 10th", "May 1st", "May 29th", "June 26th", "July 24th", "Aug 21st", "Sep 18th", "Oct 16th", "Nov 13th", "Dec 11th"];
 
     function getMonthAndDay(dateStr) {
       const cleanStr = dateStr.replace(/(\d+)(st|nd|rd|th)/, '$1');
@@ -326,16 +343,25 @@
     const currentYear = today.getFullYear();
     const dateList = document.getElementById('date-list');
 
-    upcomingDates.forEach(str => {
-      const parts = getMonthAndDay(str);
-      const eventDate = new Date(currentYear, parts.monthIndex, parts.day);
-      if (eventDate < todayNorm) return;
+    const specialDates = ["March 28th"];
 
-      const displayDate = eventDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-      const li = document.createElement('li');
-      li.innerHTML = `<span class="date-icon">🗓️</span>${displayDate}`;
-      dateList.appendChild(li);
-    });
+upcomingDates.forEach(str => {
+  const parts = getMonthAndDay(str);
+  const eventDate = new Date(currentYear, parts.monthIndex, parts.day);
+  if (eventDate < todayNorm) return;
+
+  const displayDate = eventDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const li = document.createElement('li');
+  const isSpecial = specialDates.includes(str);
+
+  if (isSpecial) {
+    li.classList.add('special');
+    li.innerHTML = `<span class="date-icon">⭐</span>${displayDate}<span class="special-tag">Special Event</span><span class="date-icon">⭐</span>`;
+  } else {
+    li.innerHTML = `<span class="date-icon">🗓️</span>${displayDate}`;
+  }
+  dateList.appendChild(li);
+});
   </script>
 </body>
 </html>
