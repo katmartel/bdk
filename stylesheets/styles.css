@@ -675,6 +675,7 @@
     }
 
     .polaroid-card {
+      z-index: 1;
       position: relative;
       background: var(--white);
       border-radius: 4px;
@@ -685,6 +686,15 @@
       width: 100%;
       transition: transform var(--transition);
     }
+    .polaroid-card--back {
+  transform: rotate(2.5deg) translateY(-60px) translateX(12px);
+  z-index: 0;
+  margin-top: 0;
+}
+
+.polaroid-card--back:hover {
+  transform: rotate(1deg) translateY(-64px) translateX(12px);
+}
     .polaroid-card:hover {
       transform: rotate(0deg) translateY(-4px);
       box-shadow: 0 32px 70px rgba(26,20,16,.26);
