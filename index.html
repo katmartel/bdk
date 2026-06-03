@@ -95,21 +95,22 @@
   </div>
 
   <!-- ─── Spring into Ballroom ─────────────────────── -->
-<!-- <section class="special-event">
+<section class="special-event">
   <div class="special-event-inner">
-    <p class="special-event-eyebrow">✦ Special Event ✦</p>
-    <h3>Spring into Ballroom</h3>
-    <p class="special-event-date">Saturday, March 28th, 2026</p>
+    <p class="special-event-eyebrow"><span class="eyebrow-sun">☀</span> Special Event <span class="eyebrow-sun">☀</span></p>
+    <h3>Sway into Summer</h3>
+    <p class="special-event-date">Saturday, June 27th, 2026</p>
     <p class="special-event-description">
-      Beginner to Advanced Lessons<br/>
-      Saturday Night Social with Local Performances and Showcases<br/>
-      <strong>Special Guest Instructor:</strong> WDSF World Championship Bronze Medalist, Tony Chong of T&G Dancesport
-    </p>
-<a href="images/TG Weekend 2026.pdf" target="_blank" class="special-event-poster-btn">
+  After the success of Spring into Ballroom, we're thrilled to welcome back our guest instructor for another incredible day of dance!<br/><br/>
+  Beginner to Advanced Lessons<br/>
+  Saturday Night Social <br/>
+  <strong>Special Guest Instructor:</strong> WDSF World Championship Bronze Medalist, Tony Chong of T&G Dancesport
+</p>
+<a href="images/June TG Weekend 2026.pdf" target="_blank" class="special-event-poster-btn">
   <i class="fa-regular fa-file-pdf"></i> View Poster
 </a>
   </div>
-</section> -->
+</section>
 
   <!-- ─── About / Event Info ─────────────────────── -->
   <section id="about" class="about-section">
@@ -337,7 +338,7 @@
     });
 
     /* ── Date list ── */
-const upcomingDates = ["Jan 9th", "Feb 6th", "March 6th", "March 28th", "April 10th", "May 1st", "May 29th", "June 26th", "July 24th", "Aug 21st", "Sep 18th", "Oct 16th", "Nov 13th", "Dec 11th"];
+const upcomingDates = ["Jan 9th", "Feb 6th", "March 6th", "March 28th", "April 10th", "May 1st", "May 29th", "June 26th", "June 27th", "July 24th", "Aug 21st", "Sep 18th", "Oct 16th", "Nov 13th", "Dec 11th"];
 
     function getMonthAndDay(dateStr) {
       const cleanStr = dateStr.replace(/(\d+)(st|nd|rd|th)/, '$1');
@@ -350,7 +351,7 @@ const upcomingDates = ["Jan 9th", "Feb 6th", "March 6th", "March 28th", "April 1
     const currentYear = today.getFullYear();
     const dateList = document.getElementById('date-list');
 
-    const specialDates = ["March 28th"];
+    const specialDates = ["March 28th", "June 27th"];
 
 upcomingDates.forEach(str => {
   const parts = getMonthAndDay(str);
